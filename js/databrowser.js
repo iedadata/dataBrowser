@@ -136,7 +136,7 @@ $(document).ready(function(){
     mgdsMap.overlayWMS(
             "http://www.marine-geo.org/services/mapserv7/seismic_data?"+$.param({"SLD":"http://dev.marine-geo.org/services/sld/databrowser_sld.xml"})+"&",
             'MGDS-DataSetsLines,MGDS-DataSets,MGDS-DataSets-Points,MGDS-DataObjects-OBS,MGDS-DataObjects-Points-OBS,MGDS-DataStations-OBS,UTIG-DataSet',
-            "Seismic Data",
+            'Seismic Data',
             'image/png',
             {
                 SERVICE     : "WMS",

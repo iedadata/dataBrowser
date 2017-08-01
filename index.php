@@ -50,12 +50,16 @@
                         <div id="sesar_desc" data-layer="SESAR Samples">
                             <b>SESAR</b> - 
                         </div>
+						<div id="seismic_desc" data-layer="Seismic Data">
+							<b>Seismic Data</b>
+						</div>
                     </div>
                 <div id="ecresults" data-layer="EarthChem Portal"></div>
                 <div id="mgdsresults" data-layer="MGDS Cruise Tracks"></div>
                 <div id="gcresults" data-layer="Geochron"></div>
                 <div id="gmrtresults" data-layer="GMRT High-Res"></div>
                 <div id="sesarresults" data-layer="SESAR"></div>
+				<!--<div id="seismicresults" data-layer="Seismic Data"></div>-->
             </div>
         </div>
 		<div id="content">
