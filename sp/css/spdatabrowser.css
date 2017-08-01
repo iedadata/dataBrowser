@@ -1,0 +1,113 @@
+body {
+    width: 100%;
+    height: 100%; 
+    overflow:hidden;margin:0; 
+    position:absolute;
+    left:0px;
+    top:0px;
+    color:#333;
+    font: 15px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+#wrapper {
+    width: 100%;
+    height: 100%;
+    text-align:center;
+    table-layout: fixed;
+}
+#content {
+    position: absolute;
+    right:0px;
+    top:0px;
+    height:100%;
+    padding:0 !important;
+}
+#mapclient {
+    background: none !important; 
+    margin: 0px !important; 
+    width:100%;
+    height:100%;
+    position:relative;
+}
+#resultslist {
+    position:absolute;
+    left:0px;
+    top:0px; 
+    width: 250px; 
+    height: 100%; 
+    border-width: 1px 0px 1px 1px; 
+    border-color: #444; 
+    border-style: solid; 
+    text-align: left;
+}
+#listdata .result-header {
+    padding:3px 5px;
+    line-height:1em;
+    margin: 0px;
+    border-bottom: 2px solid #333;
+}
+
+#listdata h4 {
+    padding:3px 5px;
+    line-height:1em;
+    margin: 0px;
+    border-bottom: 2px solid #333;
+}
+
+#listdata .result-title {
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+#ecresults div,#mgdsresults div,#gcresults div,#gmrtresults div,#sesarresults div,#abstract div,#data_layer_descriptions div {
+    padding: 5px;
+    font-weight:200;
+}
+#abstract {
+    display: block;
+}
+#data_layer_descriptions {
+    display: none;
+}
+
+#listdata a {color:#4682b4;}
+#listdata a:link, #footer a:link {
+  border: none;
+  /*font-weight:bold;*/
+  color: #4682b4;
+  text-decoration: none;
+}
+#listdata a:hover, #footer a:hover, #portal_menu ul li a.cur {
+  /*background-color: #aaa;
+  border-bottom: 1px solid #000;
+  text-shadow: 2px 2px 2px #666;*/
+  color: #d2691e;
+  border-bottom: 1px solid #d2691e;
+  text-decoration: none;
+}
+#listdata {padding:0;height:100%;width:100%;}
+.tcontent {
+    display: none;
+}
+.turndown {
+    color: #002783;
+    cursor: pointer;
+    
+}
+
+.tbox .tcontent {
+	border-color: gray;
+	border-width: 2px;
+	border-style: solid;
+	padding-right: 1em;
+}
+
+#usapresults,#ecresults,#mgdsresults,#gcresults,#gmrtresults,#sesarresults,#abstract,#data_layer_descriptions {
+    padding:5px 5px 15px 5px;
+}
+#layercontrol .layerdivtitle {
+    border-color: #333;
+}
+#mapclient {
+    color: #333;
+}
+
