@@ -6,18 +6,18 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/mapv3.css" media="all" />
 	<link rel="shortcut icon" href="http://www.iedadata.org/sites/www.iedadata.org/files/arthemia_favicon.gif" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="/inc/jquery-ui-1.10.2.custom/css/smoothness/jquery-ui-1.10.2.custom.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.2.custom.min.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="css/databrowser.css" />
-	<script type="text/javascript" src="/inc/jquery-1.9.1.js"></script>
-	<script type="text/javascript" src="/inc/jquery-ui-1.10.2.custom.min.js"></script>
-    <script type="text/javascript" src="/inc/malihu-custom-scrollbar-plugin-3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
    	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyATYahozDIlFIM1mO7o66AocXi72mkPT18&sensor=false&libraries=drawing" type="text/javascript"></script>
     <script src="js/basemap_conf.js" type="text/javascript"></script>
     <script src="js/basemap_v3.js" type="text/javascript"></script>
     <script src="js/basemap_drawing.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/databrowser.js"></script>
     <script type="text/javascript" src="js/layer_info.js"></script>
-    <link rel="stylesheet" href="/inc/malihu-custom-scrollbar-plugin-3.0.6/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="css/vendor/jquery.mCustomScrollbar.min.css" />
 
     <script type="text/javascript" src="js/map_control.js"></script>
     <link rel="stylesheet" type="text/css" href="css/map_control.css"/>

@@ -39,11 +39,14 @@ foreach ($layers as $layer) {
         if ($layer == "UTIG-DataSet") {
             foreach ($array[$layername][$featurename] as $feature) {
             echo sprintf(
-                    "<div><b>Cruise:</b> <a href=\"%s\">%s</a></div>"
-                    ."<div><b>Data Type:</b> %s</div><hr>",
+                    "<div><a href=\"%s#segy_proc\" target=\"_blank\"><b style=\"font-size:1.1em\">%s</b></a></div>"
+                    ."<div><b>Cruise:</b> <a href=\"%s\" target=\"_blank\">%s</a></div>"
+                    ."<div><b>Contributor:</b> %s</div><hr>",
+					$feature['cruise_url'],
+                    $udt[$feature['data_type']],
                     $feature['cruise_url'],
                     strtoupper($feature['cruise_id']),
-                    $udt[$feature['data_type']]
+                    $feature['contributor']
             );
             }
         }
@@ -52,7 +55,7 @@ foreach ($layers as $layer) {
                 if (isset($feature['data_set_url']))
                     $feature['url']=$feature['data_set_url'];
                 echo sprintf(
-                    "<div><b style=\"font-size:1.1em\"><a href=\"%s\">%s Data</a></b></div>
+                    "<div><b style=\"font-size:1.1em\"><a href=\"%s\" target=\"_blank\">%s Data</a></b></div>
                     <div><b>Cruise:</b> <a href=\"%s\">%s</a></div>
                     <div><b>Device Type:</b> %s</div>
                     <div><b>Chief Scientist:</b> %s</div><hr>",

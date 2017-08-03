@@ -1,0 +1,29 @@
+{
+  "name": "databrowser",
+  "version": "1.0.0",
+  "description": "The IEDA Data Browser provides a quick, intuitive interface for finding and visualizing the data available through IEDA.",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iedadata/dataBrowser.git"
+  },
+  "author": "John Morton <jmorton@ldeo.columbia.edu>",
+  "license": "Apache",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/iedadata/dataBrowser/issues"
+  },
+  "homepage": "https://github.com/iedadata/dataBrowser",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower-install-simple": "^1.2.4",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-less": "^1.4.1"
+  }
+}

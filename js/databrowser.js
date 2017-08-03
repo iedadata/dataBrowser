@@ -219,11 +219,11 @@ $(document).ready(function(){
             requests = new Array();
         }
         $("#abstract").hide();
-        $("#ecresults").html("<h4>EarthChem</h4><img src=\"/images/throbber.gif\" />");
-        $("#gcresults").html("<h4>Geochron</h4><img src=\"/images/throbber.gif\" />");
-        $("#mgdsresults").html("<h4>Marine-Geo</h4><img src=\"/images/throbber.gif\" />");
-	$("#gmrtresults").html("<h4>GMRT</h4><img src=\"/images/throbber.gif\" />");
-        $("#sesarresults").html("<h4>SESAR</h4><img src=\"/images/throbber.gif\" />");
+        $("#ecresults").html("<h4>EarthChem</h4><img src=\"images/throbber.gif\" />");
+        $("#gcresults").html("<h4>Geochron</h4><img src=\"images/throbber.gif\" />");
+        $("#mgdsresults").html("<h4>Marine-Geo</h4><img src=\"images/throbber.gif\" />");
+	$("#gmrtresults").html("<h4>GMRT</h4><img src=\"images/throbber.gif\" />");
+        $("#sesarresults").html("<h4>SESAR</h4><img src=\"images/throbber.gif\" />");
      
 	var formatResultHeader = function(title, count) {
 		return "<div class='result-header'><span class='result-title'>{0}</span><span class='result-count'>({1} results)</span></div>".format(title, count);

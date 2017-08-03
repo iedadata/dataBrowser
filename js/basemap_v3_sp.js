@@ -294,7 +294,7 @@ MGDSMapClient.prototype.selectPoint = function(evt) {
 	    });
 	    var iconStyle = new ol.style.Style({
 		image: new ol.style.Icon ({
-		    src: '/databrowser/sp/img/map-marker-icon.png',
+		    src: '/databrowser/img/map-marker-icon.png',
 		    anchor: [0.5, 0.8]
 		})
 	    });
@@ -479,7 +479,7 @@ MGDSMapClient.prototype.addLayers = function() {
 	}),
 	visible: false,
 	clickevent: {
-            qurl: "/databrowser/sp/inc/ecp_select_point.php?",
+            qurl: "/databrowser/inc/ecp_select_point.php?",
             qurl_params: {
 		SERVICE: 'WMS',
             	REQUEST: 'GetFeatureInfo',
@@ -525,7 +525,7 @@ MGDSMapClient.prototype.addLayers = function() {
 	}),
 	visible: false,
 	clickevent:{
-            qurl: "/databrowser/sp/inc/geochron_select_point.php?",
+            qurl: "/databrowser/inc/geochron_select_point.php?",
             qurl_params: {
 		SERVICE: 'WMS',
             	REQUEST: 'GetFeatureInfo',
@@ -544,7 +544,7 @@ MGDSMapClient.prototype.addLayers = function() {
 	    url: "http://api.usap-dc.org:81/wfs?"
 	}),
 	clickevent: {
-	    qurl: "/databrowser/sp/inc/usap_select_point.php?",
+	    qurl: "/databrowser/inc/usap_select_point.php?",
             qurl_params: {
 		SERVICE: 'WMS',
             	REQUEST: 'GetFeatureInfo',
@@ -612,7 +612,7 @@ MGDSMapClient.prototype.addLayers = function() {
    		content+="</div>";
    		return content;
    	    },
-    	    qurl: 'http://' + document.location.hostname + "/databrowser/sp/inc/sesarwrapper.php?",
+    	    qurl: 'http://' + document.location.hostname + "/databrowser/inc/sesarwrapper.php?",
    	    qurl_params: { 
     		SERVICE: 'WMS',
     		REQUEST: 'GetFeatureInfo',

@@ -1,0 +1,38 @@
+{
+  "name": "databrowser",
+  "version": "1.0.0",
+  "homepage": "https://github.com/iedadata/dataBrowser",
+  "authors": [
+    "John Morton <jmorton@ldeo.columbia.edu>"
+  ],
+  "description": "The IEDA Data Browser provides a quick, intuitive interface for finding and visualizing the data available through IEDA.",
+  "main": "index.php",
+  "moduleType": [],
+  "keywords": [
+    "IEDA",
+    "Geophysics",
+    "Geochemistry",
+    "Geoinformatics",
+    "Earth",
+    "Science",
+    "Polar",
+    "Seismic"
+  ],
+  "license": "Apache",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "malihu-custom-scrollbar-plugin": "~3.1.5",
+    "proj4": "~2.4.3",
+    "ol3-layerswitcher": "~1.1.2",
+    "ol3-popup": "~1.0.1",
+    "jquery-bbq-deparam": "~1.2.1"
+  }
+}

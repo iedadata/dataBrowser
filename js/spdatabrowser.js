@@ -34,11 +34,11 @@ $(document).ready(function(){
 	    requests = new Array();
 	}
 	$("#abstract").hide();
-	$("#ecresults").html("<h4>EarthChem</h4><img src=\"/images/throbber.gif\" />");
-	$("#gcresults").html("<h4>Geochron</h4><img src=\"/images/throbber.gif\" />");
-	$("#mgdsresults").html("<h4>Marine-Geo</h4><img src=\"/images/throbber.gif\" />");
-	$("#gmrtresults").html("<h4>GMRT</h4><img src=\"/images/throbber.gif\" />");
-	$("#sesarresults").html("<h4>SESAR</h4><img src=\"/images/throbber.gif\" />");
+	$("#ecresults").html("<h4>EarthChem</h4><img src=\"images/throbber.gif\" />");
+	$("#gcresults").html("<h4>Geochron</h4><img src=\"images/throbber.gif\" />");
+	$("#mgdsresults").html("<h4>Marine-Geo</h4><img src=\"images/throbber.gif\" />");
+	$("#gmrtresults").html("<h4>GMRT</h4><img src=\"images/throbber.gif\" />");
+	$("#sesarresults").html("<h4>SESAR</h4><img src=\"images/throbber.gif\" />");
 	
 	var polygonToString = function(coords, sep) {
 	    if (!sep) { sep = ','; }
@@ -61,6 +61,28 @@ $(document).ready(function(){
 
 	var formatResultBody = function(text,url) {
 	    return "<div>{0}</div><div><a href='{1}' target=\"_blank\">Explore &gt;&gt;&gt;</a></div>".format(text,url);
+	}
+    var formatResultPost = function(text,url,post) {
+        var divel = $('<div/>').html(text);
+        var form = $('<form/>').attr({
+            'target' : "_blank",
+            'action' : url,
+            'method': "post"
+        });
+        $.each(post,function(key,value){
+            form.append($("<input/>").attr({
+                //"name" : "spatial_bounds_interpolated",
+                "name" : key,
+                "type" : "hidden",
+                "value" : value
+            }));
+        });
+        form.append($("<a/>").attr({
+            "href": "#",
+            "onclick":"event.preventDefault();this.parentNode.submit();"
+        }).html("Explore &gt;&gt;&gt;"));
+        
+        return $("<div/>").append(divel).append(form);
 	}
 	
 	//Earthchem
@@ -123,48 +145,49 @@ $(document).ready(function(){
 	    }
 	}));
 
+	//USAP
+	var usap_url = "/databrowser/inc/usap_pass_through.php?wkt=POLYGON(("+poly_str+"))";
+	//var gcsearchurl = "http://www.geochron.org/polygonsearch?srs=3031&polygon="+poly_str;
+	requests.push($.ajax({
+	    url: usap_url,
+	    success: function(ev) {
+		var data = JSON.parse(ev);
+		var total = 0;
+		var text_pieces = [];
+		for (var i = 0; i < data.length; i++) {
+		    total += data[i].count;
+		    // Ignore the 'Antarctic ' part at the beginning of each program name
+		    text_pieces.push(data[i].program.slice(10) + ' (' + data[i].count + ')');
+		}
+		var text = text_pieces.join(',')
+		var html = formatResultHeader("USAP", total);
+		var resultsearch = formatResultPost(text, "http://www.usap-dc.org/search",{
+            "spatial_bounds_interpolated":"POLYGON(("+poly_str+"))"
+        });
+        html += resultsearch.prop("outerHTML");
+		$('#usapresults').html(html);
+	    }
+	}));
+
 	//GMRT
         var gmrtsearchurl = "http://www.marine-geo.org/tools/maps_grids.php?"+wesn_str;
         $("#gmrtresults").html("<h4>GMRT</h4><div><a href=\""+gmrtsearchurl+"\" target=\"_blank\">Generate a map/grid using GMRT MapTool &gt;&gt;&gt;</a></div>");
 
 	//SESAR
 	var sesarsearchurl = "http://www.geosamples.org/geosearch?srs=3031&polygon="+poly_str;
-	var sesarurl = "http://prod-app.earthchem.org:8989/geoserver/SESAR/wfs?";
-	var xml =
-	   ('<GetFeature ' +
-                  'service="WFS" ' +
-                  'resultType="hits" ' +
-                  'xmlns="http://www.opengis.net/wfs" ' +
-                  'xmlns:ogc="http://www.opengis.net/ogc" ' +
-                  'xmlns:gml="http://www.opengis.net/gml" ' +
-                  'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
-                  'xmlns:SESAR="http://prod-app.earthchem.org:8989/geoserver/" ' +
-                  'xsi:schemaLocation="http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/wfs.xsd"> ' +
-              '<Query typeName="SESAR:wfs_samples" srsName="EPSG:3031"> ' +
-                '<ogc:Filter> ' +
-                  '<ogc:Within> ' +
-                    '<ogc:PropertyName>geom</ogc:PropertyName> ' +
-                    '<gml:Polygon srsName="EPSG:3031"> ' +
-                      '<gml:exterior> ' +
-                        '<gml:LinearRing srsName="EPSG:3031"> ' +
-                          '<gml:posList>{0}</gml:posList> ' +
-                        '</gml:LinearRing> ' +
-                      '</gml:exterior> ' +
-                    '</gml:Polygon> ' +
-                  '</ogc:Within> ' +
-                '</ogc:Filter> ' +
-              '</Query> ' +
-            '</GetFeature> ').format(poly_str_no_commas);
+	var sesarurl = "/databrowser/inc/sesar_polygon_wrapper.php?polygon={0}&srs=3031&hide_private=1&limit=1&page_no=1".format(poly_str);
+	//var sesarurl = "http://dev-app.iedadata.org/spdatabrowser/inc/sesar_polygon_wrapper.php?&srs=3031&hide_private=1&limit=1&page_no=1&polygon="+poly_str;
 	
 	requests.push($.ajax({
 	    url: sesarurl,
-	    method: 'POST',
-	    contentType: 'text/plain',
-	    dataType: "xml",
-	    data: xml,
 	    success: function(str){
-		var total = $(str).find("*").first().attr('numberOfFeatures');
-		total = total?parseInt(total):0;
+		
+		var doc = $($.parseHTML(str));
+		var totalText = doc.children('p').first().html();
+		var total = 0;
+		if (totalText) {
+		    total = parseInt(totalText.split(': ')[1]);
+		}
 		var html = formatResultHeader('SESAR Samples', total);
 		if (total > 0) {
 		    html += formatResultBody("", sesarsearchurl);
@@ -178,6 +201,8 @@ $(document).ready(function(){
 		}
 	    }
 	}));
+
+	
     });
 
 });
