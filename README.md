@@ -6,6 +6,7 @@ Code for Web Mercator and Southg Polar map-based browsers for exploring IEDA dat
 - [PHP](http://php.net/) v5.4+
 - [grunt-cli](https://gruntjs.com/) v1.2+
 - [Apache HTTP Server](https://httpd.apache.org/) (or other web server)
+
 ###Instructions
 Clone this repository somewhere in your web root directory, then cd to the directory and run npm install.
 ```
