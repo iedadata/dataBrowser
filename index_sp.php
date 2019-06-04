@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/mapv3_sp.css?" media="all" />
     <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.2.custom.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/spdatabrowser.css" />
-    <link rel="stylesheet" type="text/css" href="http://openlayers.org/en/v3.12.1/css/ol.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/3.12.1/ol.css"/>
     <link rel="stylesheet" type="text/css" href="css/vendor/ol3-layerswitcher.css" />
     <link rel="stylesheet" type="text/css" href="css/vendor/jquery.mCustomScrollbar.min.css"/>
     <link rel="stylesheet" type="text/css" type="text/css" href="css/map_control.css"/>
@@ -18,7 +18,7 @@
 	<script type="text/javascript" src="js/jquery-ui-1.10.2.custom.min.js"></script>
     <!--<script type="text/javascript" src="/bower_components/jquery-ui/jquery-ui.min.js"></script>-->
     <script type="text/javascript" src="js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript" src="http://openlayers.org/en/v3.9.0/build/ol-debug.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/3.9.0/ol-debug.js"></script>
     <script type="text/javascript" src="js/vendor/proj4-src.js"></script>
     <script type="text/javascript" src="js/basemap_conf_sp.js"></script>
     <script type="text/javascript" src="js/basemap_v3_sp.js"></script>
