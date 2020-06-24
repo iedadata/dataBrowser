@@ -68,7 +68,7 @@ $(document).ready(function(){
         }
     );
     mgdsMap.overlayWMS(
-        "http://gmrt.marine-geo.org/cgi-bin/mapserv?map=/public/mgg/web/gmrt.marine-geo.org/htdocs/services/map/wms_merc_mask.map",
+        "https://www.gmrt.org/services/mapserver/wms_merc_mask?",
         'topo-mask',
         'GMRT High-Res',
         'image/jpeg'
@@ -303,7 +303,7 @@ $(document).ready(function(){
         }));
 
 	//GMRT
-        var gmrtsearchurl = "http://www.marine-geo.org/tools/maps_grids.php?"+wesn_str;
+        var gmrtsearchurl = "https://www.gmrt.org/GMRTMapTool/?"+wesn_str;
         $("#gmrtresults").html("<h4>GMRT</h4><div><a href=\""+gmrtsearchurl+"\" target=\"_blank\">Generate a map/grid using GMRT MapTool &gt;&gt;&gt;</a></div>");
     
         //SESAR

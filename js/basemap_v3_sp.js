@@ -441,7 +441,7 @@ MGDSMapClient.prototype.addLayers = function() {
 		'LAYERS': 'South_Polar_Bathymetry'
 	    },
 	    url: //"http://www.marine-geo.org/services/wms_SP?",
-	    "http://gmrt.marine-geo.org/cgi-bin/mapserv?map=/public/mgg/web/gmrt.marine-geo.org/htdocs/services/map/wms_sp.map",
+	    "https://www.gmrt.org/services/mapserv/wms_SP?",
 	    serverType: "mapserver"
 	}),
 	switchable: false
@@ -455,7 +455,7 @@ MGDSMapClient.prototype.addLayers = function() {
 		'LAYERS': 'South_Polar_Bathymetry'
 	    },
 	    url: //"http://www.marine-geo.org/services/wms_SP_mask?",
-	    "http://gmrt.marine-geo.org/cgi-bin/mapserv?map=/public/mgg/web/gmrt.marine-geo.org/htdocs/services/map/wms_sp_mask.map",
+	    "https://www.gmrt.org/services/mapserv/wms_SP_mask?",
 
 	    serverType: "mapserver"
 	}),
